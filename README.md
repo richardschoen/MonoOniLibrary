@@ -22,7 +22,7 @@ Run the following commands to copy the save file from the IFS into a SAVF object
 **CPYFRMSTMF FROMSTMF('/tmp/monoi.savf')            
            TOMBR('/qsys.lib/qgpl.lib/monoi.file') 
            MBROPT(*REPLACE)                       
-           CVTDTA(*NONE)                         **
+           CVTDTA(*NONE)**
 
 Restore the MONOI library
 **RSTLIB SAVLIB(MONOI) DEV(*SAVF) SAVF(QGPL/MONOI)**
