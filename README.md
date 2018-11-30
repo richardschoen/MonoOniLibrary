@@ -12,11 +12,11 @@ Follow instructions for installing the Mono environment in **/opt/mono**.
 
 # Installing MONOI library and creating MONO command objects
 
-Download the monoi.savf save file from the selected releases page. 
+Download the **monoi.savf** save file from the selected releases page. 
 
 https://github.com/richardschoen/MonoOniLibrary/releases
 
-Upload the monoi.savf to the IFS and place it in /tmp/monoi.savf
+Upload the **monoi.savf** to the IFS and place it in **/tmp/monoi.savf**
 
 Run the following commands to copy the save file from the IFS into a SAVF object
 
