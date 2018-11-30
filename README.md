@@ -51,12 +51,19 @@ MONO WORKDIR('/mydotnet')
 # MONO command parms
 
 **WORKDIR** - The IFS location for the .Net program you want to call.
+
 **EXEFILE** - The .Net program you want to call.
+
 **ARGS** - Command line parameters. Up to 40 args can be passed to a .Net program call.
+
 **OUTFILE** - The output file which will receive STDOUT lokking feedback.
+
 **DSPSTDOUT** - Display the outfile contents. Nice when debigging. 
+
 **LOGSTDOUT** - Place STDOUT log entries into the current jobs job log. Use this if you want the log info in the IBM i joblog.
+
 **PRTSTDOUT** - Print STDOUT to a spool file. Use this if you want a spool file of the log output.
+
 **DLTSTDOUT** - This option insures that the STDOUT IFS temp files get cleaned up after processing. All IFS log files get created in the /tmp/mono directory.
 
 
