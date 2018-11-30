@@ -12,25 +12,25 @@ Follow instructions for installing the Mono environment in **/opt/mono**.
 
 # Installing MONOI library and creating MONO command objects
 
-Download the **monoi.savf** save file from the selected releases page. 
+Download the monoi.savf save file from the selected releases page. 
 
-Upload the **monoi.savf** to the IFS and place it in **/tmp/monoi.savf**
+Upload the monoi.savf to the IFS and place it in /tmp/monoi.savf
 
 Run the following commands to copy the save file from the IFS into a SAVF object
-**CRTSAVF FILE(QGPL/MONOI)**
+CRTSAVF FILE(QGPL/MONOI)
  
-**CPYFRMSTMF FROMSTMF('/tmp/monoi.savf') TOMBR('/qsys.lib/qgpl.lib/monoi.file') MBROPT(*REPLACE) CVTDTA(*NONE)**
+CPYFRMSTMF FROMSTMF('/tmp/monoi.savf') TOMBR('/qsys.lib/qgpl.lib/monoi.file') MBROPT(*REPLACE) CVTDTA(*NONE)
 
 Restore the MONOI library
-**RSTLIB SAVLIB(MONOI) DEV(*SAVF) SAVF(QGPL/MONOI)**
+RSTLIB SAVLIB(MONOI) DEV(*SAVF) SAVF(QGPL/MONOI)
 
 Build the MONOI commands
 
-**ADDLIBLE MONOI**
+ADDLIBLE MONOI
 
-**CRTCLPGM PGM(MONOI/SRCBLDC) SRCFILE(MONOI/SOURCE) SRCMBR(SRCBLDC) REPLACE(*YES)**
+CRTCLPGM PGM(MONOI/SRCBLDC) SRCFILE(MONOI/SOURCE) SRCMBR(SRCBLDC) REPLACE(*YES)
 
-**CALL PGM(MONOI/SRCBLDC)**
+CALL PGM(MONOI/SRCBLDC)
 
 # Using the MONO CL command to call a .Net console or other application
 
