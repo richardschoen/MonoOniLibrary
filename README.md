@@ -22,15 +22,11 @@ Repo file name: **/QOpenSys/etc/yum/repos.d/qsecofr.repo**
 
 The contents of the repo file should be:
 
-[qsecofr]
-
-name=QSECOFR IBM i RPM Repo
-
-baseurl=http://repo.qseco.fr
-
-enabled=1
-
-gpgcheck=0
+`[qsecofr]`<br/>
+`name=QSECOFR IBM i RPM Repo`<br/>
+`baseurl=http://repo.qseco.fr`<br/>
+`enabled=1`<br/>
+`gpgcheck=0`<br/>
 
 After creating the new repository, you can launch the **Open Source Package Management** utility in IBM ACS Client from the Tools menu and you'll see the new **Available Packages**. Select **mono-complete** and click the install option. This should complete the Mono install to the **/QopenSys/pkgs** folder location for apps installed by Yum on IBM i.
 
