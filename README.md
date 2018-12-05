@@ -76,7 +76,7 @@ MONO WORKDIR('/mydotnet')
 
 **EXEFILE** - The .Net program you want to call.
 
-**ARGS** - Command line parameters. Up to 40 args can be passed to a .Net program call. Do NOT put double quotes around parms or your program call may get errors because your parameters get compromised with double quotes. Double quotes are added automatically. Although single quotes are allowed around your data:  Ex: **'My Parm Value'**
+**ARGS** - Command line parameters. Up to 40 args can be passed to a .Net program call. Do NOT put double quotes around parms or your program call may get errors because your parameters get compromised with double quotes. Double quotes are added automatically inside the CL command processing program. Single quotes are allowed around your parmaeter data:  Ex: **'My Parm Value 1' 'My Parm Value 2'**
 
 **OUTFILE** - The output file which will receive STDOUT lokking feedback.
 
@@ -115,7 +115,7 @@ MONO2 WORKDIR('/mydotnet')
 
 **EXEFILE** - The .Net program you want to call.
 
-**ARGS** - Command line parameters. A single command line string where each parameter is delimited by double quotes. Double quotes are automatically removed by the .Net program when it processes the arguments. Ex: **'"My Parm Value1" "My Parm Value2"'** Notice the entire command line value is surrounded by single quotes and each parm is delimited with double quotes.
+**ARGS** - Command line parameters. A single command line string where each parameter is delimited by double quotes. The double quotes are automatically removed by the .Net program when it processes the arguments. Ex: **'"My Parm Value1" "My Parm Value2"'** Notice the entire command line value is surrounded by single quotes and each parm is delimited with double quotes.
 
 **OUTFILE** - The output file which will receive STDOUT lokking feedback.
 
