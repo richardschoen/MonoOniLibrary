@@ -3,12 +3,32 @@ Mono on IBM i Library (MONOI) Containing MONO CL Command Wrapper to call .Net ap
 
 The main benefit of this wrapper is to be able to integrate .Net applications on-the-fly with standard IBM i job streams.
 
-# Requirements
+# Requirements for using the MONO CL Commands
 
-Mono for IBM i must be installed. Mono for IBM i binary distribution can be downloaded from here:
+The Mono runtime environment must be installed on your IBM i. This can be done via downloading a binary save file or by using a custom Yum repository to install via the IBM i Access Client Solutions (ACS) Client **Open Source Package Management** option from the Tools menu.
+
+**Installing via Save File Distribution**
+
+Mono for IBM i must be installed. Mono for IBM i binary save file distribution can be downloaded from here:
 https://github.com/MonoOni/binarydist
 
 Follow instructions for installing the Mono environment in **/opt/mono**.
+
+**Installing via Yum Repository**
+
+On the IBM i Manually create the following repository file via the EDTF command or create it via Windows notepad and upload to the IFS location for the Yum repositories:
+
+Repo file name: **/QOpenSys/etc/yum/repos.d/qsecofr.repo**
+
+The contents of the repo file should be:
+
+[qsecofr]
+name=QSECOFR IBM i RPM Repo
+baseurl=http://repo.qseco.fr
+enabled=1
+gpgcheck=0
+
+After creating the new repository, you can launch the **Open Source Package Management** utility in IBM ACS Client from the Tools menu and you'll see the new **Available Packages**. Select **mono-complete** and click the install option. This should complete the Mono install to the **/QopenSys/pkgs** folder location for apps installed by Yum on IBM i.
 
 # Installing MONOI library and creating MONO command objects
 
