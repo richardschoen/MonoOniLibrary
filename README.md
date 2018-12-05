@@ -38,12 +38,13 @@ Build the MONOI commands
 
 # Using the MONO CL command to call a .Net console or other application
 
-The following example calls a program named: Sample1.exe from the /mydotnet directory and passes the program 2 parameters.
+The following example calls a program named: Sample1.exe from the /mydotnet directory and passes the program 2 parameters individually vi the MONO CL command. See the MONO2 command if you want to pass all parms in a single parameter value instead. More of a preference thing.
 
 MONO WORKDIR('/mydotnet')                 
      EXEFILE(Sample1.exe)                   
      ARGS('Parm1 value' 'Parm 2 value')     
      OUTFILE(MONOSTDOUT)                    
+     MONOPATH('/QOpenSys/pkgs/bin')
      DSPSTDOUT(*NO)                         
      LOGSTDOUT(*YES)                        
      PRTSTDOUT(*NO)                         
@@ -55,9 +56,13 @@ MONO WORKDIR('/mydotnet')
 
 **EXEFILE** - The .Net program you want to call.
 
-**ARGS** - Command line parameters. Up to 40 args can be passed to a .Net program call.
+**ARGS** - Command line parameters. Up to 40 args can be passed to a .Net program call. Do NOT put double quotes around parms or your program call may get errors because your parameters get compromised with double quotes. Double quotes are added automatically. Although single quotes are allowed around your data:  Ex: **'My Parm Value'**
 
 **OUTFILE** - The output file which will receive STDOUT lokking feedback.
+
+**MONOPATH** - This is the location of the Mono binary.  The mono executable runs your .Net program code.
+Specify **/QOpenSys/pkgs/bin** if you loaded Mono via the Yum repository. (Default)
+Specify **/opt/mono/bin** if you loaded Mono via the save file from the following link: https://github.com/MonoOni/binarydist 
 
 **DSPSTDOUT** - Display the outfile contents. Nice when debigging. 
 
@@ -68,6 +73,42 @@ MONO WORKDIR('/mydotnet')
 **DLTSTDOUT** - This option insures that the STDOUT IFS temp files get cleaned up after processing. All IFS log files get created in the /tmp/mono directory.
 
 
+# Using the MONO2 CL command to call a .Net console or other application
 
+The following example calls a program named: Sample1.exe from the /mydotnet directory and passes the program 2 parameters all in a single parameter field delimited by double quotes via the MONO2 CL command. See the MONO command if you want to pass each parameter individually without specifying double quotes. More of a preference thing.
+
+The following example calls a program named: Sample1.exe from the /mydotnet directory and passes the program 2 parameters.
+
+MONO2 WORKDIR('/mydotnet')                 
+     EXEFILE(Sample1.exe)                   
+     ARGS('"Parm1 value" "Parm 2 value"')     
+     OUTFILE(MONOSTDOUT)                    
+     MONOPATH('/QOpenSys/pkgs/bin')
+     DSPSTDOUT(*NO)                         
+     LOGSTDOUT(*YES)                        
+     PRTSTDOUT(*NO)                         
+     DLTSTDOUT(*YES)                        
+
+# MONO2 command parms
+
+**WORKDIR** - The IFS location for the .Net program you want to call.
+
+**EXEFILE** - The .Net program you want to call.
+
+**ARGS** - Command line parameters. A single command line string where each parameter is delimited by double quotes. Double quotes are automatically removed by the .Net program when it processes the arguments. Ex: **'"My Parm Value1" "My Parm Value2"'** Notice the entire command line value is surrounded by single quotes and each parm is delimited with double quotes.
+
+**OUTFILE** - The output file which will receive STDOUT lokking feedback.
+
+**MONOPATH** - This is the location of the Mono binary executable. The mono executable runs your .Net program code. 
+Specify **/QOpenSys/pkgs/bin** if you loaded Mono via the Yum repository. (Default)
+Specify **/opt/mono/bin** if you loaded Mono via the save file from the following link: https://github.com/MonoOni/binarydist 
+
+**DSPSTDOUT** - Display the outfile contents. Nice when debigging. 
+
+**LOGSTDOUT** - Place STDOUT log entries into the current jobs job log. Use this if you want the log info in the IBM i joblog.
+
+**PRTSTDOUT** - Print STDOUT to a spool file. Use this if you want a spool file of the log output.
+
+**DLTSTDOUT** - This option insures that the STDOUT IFS temp files get cleaned up after processing. All IFS log files get created in the /tmp/mono directory.
 
 
