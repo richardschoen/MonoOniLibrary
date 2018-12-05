@@ -18,6 +18,10 @@ Follow instructions for installing the Mono environment in **/opt/mono**.
 
 On the IBM i Manually create the following repository file via the **EDTF** command or create it via Windows notepad and upload to the IFS location for the Yum repositories. Ex: **EDTF STMF('/QOpenSys/etc/yum/repos.d/qsecofr.repo')**
 
+**Note:** If you create the **qsecofr.repo** file with **EDTF**, make sure before entering any text in the file, press **Shift-F3/F15** for the **EDTF Options Screen**. Set the **Selection** value to: **3** and value for **Change the CCSID of file** to: **00819** and press **Enter** and then **F12** to return to the editor. This will insure the data gets written to the **qsecofr.repo** file in ASCII format when it's saved. After saving and closing the file, run the following command: 
+
+**WRKLNK OBJ('/QOpenSys/etc/yum/repos.d/qsecofr.repo')** and then select option **8** on **qsecofr.repo**. Coded character set ID should say: **819**
+
 Repo file name: **/QOpenSys/etc/yum/repos.d/qsecofr.repo**
 
 The contents of the repo file should be:
