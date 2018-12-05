@@ -16,7 +16,7 @@ Follow instructions for installing the Mono environment in **/opt/mono**.
 
 **Installing via Yum Repository**
 
-On the IBM i Manually create the following repository file via the EDTF command or create it via Windows notepad and upload to the IFS location for the Yum repositories:
+On the IBM i Manually create the following repository file via the **EDTF** command or create it via Windows notepad and upload to the IFS location for the Yum repositories. Ex: **EDTF STMF('/QOpenSys/etc/yum/repos.d/qsecofr.repo')**
 
 Repo file name: **/QOpenSys/etc/yum/repos.d/qsecofr.repo**
 
@@ -28,7 +28,7 @@ The contents of the repo file should be:
 `enabled=1`<br/>
 `gpgcheck=0`<br/>
 
-After creating the new repository, you can launch the **Open Source Package Management** utility in IBM ACS Client from the Tools menu and you'll see the new **Available Packages**. Select **mono-complete** and click the install option. This should complete the Mono install to the **/QopenSys/pkgs** folder location for apps installed by Yum on IBM i.
+After creating the new repository IFS file **qsecofr.repo**, you can launch the **Open Source Package Management** utility from IBM ACS Client via the Tools menu and you'll see the new **Available Packages**. Select **mono-complete** and click the install option. This should complete the Mono install to the **/QopenSys/pkgs** folder location for apps installed by Yum on IBM i.
 
 # Installing MONOI library and creating MONO command objects
 
