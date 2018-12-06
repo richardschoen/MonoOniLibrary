@@ -42,6 +42,8 @@ There's a secondary file needed in the GAC as well:
 
 You can install the save file version of Mono to **/opt/mono** and then copy the **Microsoft.VisualBasic.dll** files from **/opt/mono/lib/mono/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a** to **/QOpenSys/pkgs/lib/mono/gac/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a**
 
+I have a note out to the Yum package author to see if he can fix the Yum build.
+
 # Installing MONOI library and creating MONO command objects
 
 Download the **monoi.savf** save file from the selected releases page. 
