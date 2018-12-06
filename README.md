@@ -14,7 +14,7 @@ https://github.com/MonoOni/binarydist
 
 Follow instructions for installing the Mono environment in **/opt/mono**.
 
-**Installing via Yum Repository  (Don't use currently if doing VB dev - Missing Microsoft.VisualBasic.dll missing from GAC**
+**Installing via Yum Repository  (Don't use Yum install currently if doing VB dev - Missing Microsoft.VisualBasic.dll missing from GAC**
 
 On the IBM i Manually create the following repository file via the **EDTF** command or create it via Windows notepad and upload to the IFS location for the Yum repositories. Ex: **EDTF STMF('/QOpenSys/etc/yum/repos.d/qsecofr.repo')**
 
