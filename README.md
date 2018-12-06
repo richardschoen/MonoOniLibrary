@@ -34,6 +34,14 @@ The contents of the repo file should be:
 
 After creating the new repository IFS file **qsecofr.repo**, you can launch the **Open Source Package Management** utility from IBM ACS Client via the Tools menu and you'll see the new **Available Packages**. Select **mono-complete** and click the install option. This should complete the Mono install to the **/QopenSys/pkgs** folder location for apps installed by Yum on IBM i.
 
+**Note:** I noticed that on the Yum install that the **Microsoft.VisualBasic.dll** runtimt file is not included in the **GAC** (Global ASsembly Cache). This causes a problem when running a VB app. Your VB app will get an error about a missing **Microsoft.VisualBasic.dll** file and will crash.
+
+**Microsoft.VisualBasic.dll** should be located in the following location: **/QOpenSys/pkgs/lib/mono/gac/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll**
+There's a secondary file needed in the GAC as well: 
+**/QOpenSys/pkgs/lib/mono/gac/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll.mdb**
+
+You can install the save file version of Mono to **/opt/mono** and then copy the **Microsoft.VisualBasic.dll** files from **/opt/mono/lib/mono/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a** to **/QOpenSys/pkgs/lib/mono/gac/Microsoft.VisualBasic/10.0.0.0__b03f5f7f11d50a3a**
+
 # Installing MONOI library and creating MONO command objects
 
 Download the **monoi.savf** save file from the selected releases page. 
